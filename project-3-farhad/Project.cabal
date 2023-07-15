@@ -1,0 +1,48 @@
+name:                Project
+version:             0.1
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable minis
+  main-is:             Main.hs
+  hs-Source-Dirs:      ./prov
+                     , ./src
+                     , ./prov/Soln
+  other-modules:       Bird.Printer
+                     , Interface
+                     , Parser
+                     , Datum
+                     , Printer
+                     , Semantics
+  build-depends:       HUnit
+                     , base
+                     , transformers
+                     , mtl
+                     , containers
+                     , parsec
+  default-language:    Haskell2010
+
+executable Test
+  main-is:             Tests.hs
+  ghc-options:         -main-is Tests
+  hs-Source-Dirs:      ./prov
+                     , ./src
+                     , ./prov/Soln
+  other-modules:       Bird.Printer
+                     , Interface
+                     , Parser
+                     , Main
+                     , Datum
+                     , Printer
+                     , Semantics
+                     , Checker
+                     , ChallengeTests
+  build-depends:       HUnit
+                     , base
+                     , transformers
+                     , mtl
+                     , containers
+                     , parsec
+                     , random
+                     , random-shuffle
+  default-language:    Haskell2010
